@@ -20,6 +20,9 @@
 # test = json.load(open('data.json', 'r'))
 # test
 
+#TODO Add documentation of how the thing reads the data from an excel file
+#TODO Use the json file and not this internal dict
+
 quotes = {
     'a':'This is a testing testing',
     'b':'Do most of you have any idea the psychological torture that I have endured being nice this B',

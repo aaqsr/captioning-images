@@ -3,6 +3,7 @@ from PIL import Image, ImageFont, ImageDraw, ImageOps
 
 quotefont = ImageFont.truetype("Arial.ttf", 50)
 
+#TODO add documentation for all these functions
 
 def add_border(input_img):
     """Gives the image a nice white border which is bigger at the bottom and smaller in all other sides. (To configure the border size, change the left, top, right and bottom variables in this function.)
