@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/imgprocessingfunc.cpython-37.pyc
+__pycache__/main.cpython-37.pyc
+__pycache__/os_path.cpython-37.pyc
+__pycache__/quotes.cpython-37.pyc
+.vscode/settings.json
+6.jpg
+b.jpg
+a.jpg
+out.jpg
