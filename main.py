@@ -18,5 +18,5 @@ if os.path.exists(p) and os.path.isdir(p):
             drawTitle(filename, img)
             img.save("out/{}".format(name))
 
-
+# TODO WHAT IF WE PUT THE TITLE ON THE TOP??
 # TODO Fix the title's placement, it's clipping through the quotes. Also fix the quote's placement

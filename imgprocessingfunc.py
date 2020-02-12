@@ -111,8 +111,12 @@ def drawText(text, img):
 
     for i in range(0, lineCount):
         w, h = draw.textsize(lines[i], quotefont)
-        x = img.width/2 - w/2
-        y = lastY + h
+        if lineCount == 1:
+            x = img.width/2 - w/2
+            y = lastY + h - 70
+        else:  
+            x = img.width/2 - w/2
+            y = lastY + h
         # x = 1000
         # y = 1000
         lastY = y
