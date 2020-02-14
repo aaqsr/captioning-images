@@ -1,7 +1,7 @@
 from PIL import Image, ImageFont, ImageDraw, ImageOps
 
 
-quotefont = ImageFont.truetype("Arial.ttf", 50)
+quotefont = ImageFont.truetype("Arial.ttf", 100)
 
 #TODO add documentation for all these functions
 
@@ -14,22 +14,26 @@ def add_border(input_img):
     Returns:
         PIL image -- The edited image with the border.
     """
+    print('\nadding border')
     left = 50
     top = left
     right = left
-    bottom = 300
+    bottom = 500
     border = (left, top, right, bottom)
     bimg = ImageOps.expand(input_img, border=border, fill='White')
+    print('\ndone')
     return bimg
 
 
 def cropit(im):
+    print('cropping')
     width, height = im.size
-    right = width-100
-    left = 100  # will span the entire length of the image
-    top = 300
+    right = width-1300
+    left = 1300  
+    top = 400
     bottom = height - top
     im1 = im.crop((left, top, right, bottom))
+    print('done')
     return im1
 
 
@@ -44,6 +48,7 @@ def drawTextWithOutline(text, x, y, font, img):
 
 
 def drawText(text, img):
+    print('\ndrawing text')
     # text = text.upper()
     draw = ImageDraw.Draw(img)
     # measure the size the text will take
@@ -54,7 +59,7 @@ def drawText(text, img):
         lineCount = int(round((w / img.width) + 1))
 
     print("lineCount: {}".format(lineCount))
-
+    print('cutting')
     lines = []
     if lineCount > 1:
 
@@ -113,7 +118,7 @@ def drawText(text, img):
         w, h = draw.textsize(lines[i], quotefont)
         if lineCount == 1:
             x = img.width/2 - w/2
-            y = lastY + h - 70
+            y = lastY + h - 60
         else:  
             x = img.width/2 - w/2
             y = lastY + h
@@ -121,11 +126,13 @@ def drawText(text, img):
         # y = 1000
         lastY = y
         drawTextWithOutline(lines[i], x, y, quotefont, img)
-
+    print('\ndone')
 
 def drawTitle(name, img):
+    print('\ndrawing title')
     draw = ImageDraw.Draw(img)
     w, h = draw.textsize(name, ImageFont.truetype(
-        "SFNSDisplayCondensed-Semibold.otf", 60))
-    drawTextWithOutline(name, img.width/2 - w/2, img.height-260,
-                        ImageFont.truetype("/Supplemental/Futura.ttc", 60), img)
+        "/Supplemental/Futura.ttc", 110)) 
+    drawTextWithOutline(name, img.width/2 - w/2, img.height-450,
+                        ImageFont.truetype("/Supplemental/Futura.ttc", 110), img)
+    print('\ndone')
