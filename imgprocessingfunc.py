@@ -25,8 +25,8 @@ def add_border(input_img):
 
 def cropit(im):
     width, height = im.size
-    right = width
-    left = 0  # will span the entire length of the image
+    right = width-100
+    left = 100  # will span the entire length of the image
     top = 300
     bottom = height - top
     im1 = im.crop((left, top, right, bottom))

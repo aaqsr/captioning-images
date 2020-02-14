@@ -13,9 +13,6 @@
 # for i in range(len(data)):
 #     quotes[data[i][0]] = data[i][1]
 
-# with open('data.json', 'w') as fp:
-#     json.dump(quotes, fp)
-
 
 # test = json.load(open('data.json', 'r'))
 # test
@@ -167,3 +164,7 @@ quotes = {
     'Laiba Anwar':	"I am 5 minutes younger than her...",
     'Yushra Anwar':	"...best 5 minutes of my life"
 }
+
+
+# with open('quotes.json', 'w') as fp:
+#     json.dump(quotes, fp)
