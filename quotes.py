@@ -1,27 +1,3 @@
-# quotes = {
-#     'a':'AAAAAAAAAA THIS IS A I THINK AAAAAAA SOME OTHER THINGS',
-#     'b':'Hello world this is b',
-#     'c': 'OH YES THIS BE C SAJWALKDJAWLKDJ AWLKDJAWKLDJAWDK'
-# }
-
-# import numpy as np
-# import json
-
-# quotes = {}
-# data = np.loadtxt("Batch_quotes.tsv", dtype=str, delimiter='	')
-
-# for i in range(len(data)):
-#     quotes[data[i][0]] = data[i][1]
-
-
-# test = json.load(open('data.json', 'r'))
-# test
-
-# TODO Add documentation of how the thing reads the data from an excel file
-# TODO Use the json file and not this internal dict
-
-# TODO IMP: Delete the go to x wali cheez at the end of the statements
-
 quotes = {
     'a': 'This is a testing testing',
     'b': 'Do most of you have any idea the psychological torture that I have endured being nice this B',
@@ -42,16 +18,16 @@ quotes = {
     'Ali Yahya': 'New virus called "feelings". Don\'t catch that shit.',
     'Alina Khurram': 'Not the ak47 everyone can afford.',
     'Alina Noorali': "They ask where you'll be in 10 years...Me: FPS's Future Principal",
-    'Ammar Salman': 'Learn the rules like a pro, so that you can break them like an artist ⚔',
+    'Ammar Salman': 'Learn the rules like a pro, so that you can break them like an artist',
     'Amna Anwar': "Not wearing glasses anymore. I've seen enough.",
     'Amnah Panjwani': 'Opinions are like mixtapes: I dont wanna hear yours.',
     'Anaab Tawwab': "Let your smile change the world, but don't let the world change your smile.",
-    'Anamta Rizwan': 'My only regret this year: no lifting🏋🏻',
+    'Anamta Rizwan': 'My only regret this year: no lifting',
     'Annas Khan': 'Do not take life seriously you will never get out of it alive.',
     'Anumta Sajid': "You are the artist of your life. Don't give the paint brush to anyone else.",
     'Anusha Farooqi': "Oh well! This wasn't like High School Musical at all.",
     'Armish Jessa': 'Let the good time roll.',
-    'Arsal Jangda': 'We stole the show; Twice in a row🏆',
+    'Arsal Jangda': 'We stole the show; Twice in a row',
     'Arshan Irani': "Ballin' like I'm Kobe.",
     'Asad Farooqi': "Guitar isn't the only thing I play.",
     'Asfand Aamir': 'Success is not what you have but who you are.',
@@ -117,7 +93,7 @@ quotes = {
     'Noor Ghaus': 'Why fall in love when you can fall asleep?',
     'Oomer Admani': 'From stealing your food to stealing your girl.',
     'Ovais Tauqeer': 'You can die anytime but living takes true courage.',
-    'Rabee Zia': 'Coming to school late > coming on time 🤪',
+    'Rabee Zia': 'Coming to school late > coming on time',
     'Rafay Ali': '"That\'s what" ~she',
     'Rafay Imran': 'I am cocky in prediction. I am confident in preparation. But I am always humble in victory or defeat.',
     'Rafay Qureshi': 'Well....it was fun while it lasted',
@@ -148,7 +124,7 @@ quotes = {
     'Yousuf Khalid': '5-10-2005',
     'Zain Abbas': 'I never lose. I either win or learn.',
     'Zainab Banduk': 'We graduated to go to school again.',
-    'Zara Hasan': 'We will we will rock you. Oh wait..we already did..🏆🔴',
+    'Zara Hasan': 'We will we will rock you. Oh wait...we already did...',
     'Zarak Abbasi': 'If idiots could fly then this place would be an airport.',
     'Zoha Asif': "Ajeeb! I won't be able to do solos on Sports Day now.",
     'Zorain Ahmed ': "If the opportunity doesn't knock then build a door.",
@@ -164,7 +140,3 @@ quotes = {
     'Laiba Anwar':	"I am 5 minutes younger than her...",
     'Yushra Anwar':	"...best 5 minutes of my life"
 }
-
-
-# with open('quotes.json', 'w') as fp:
-#     json.dump(quotes, fp)
