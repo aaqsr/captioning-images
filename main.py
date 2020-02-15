@@ -10,7 +10,7 @@ if os.path.exists(p) and os.path.isdir(p):
     for name in os.listdir(p):
         if name != '.DS_Store':
             print(name)
-            filename = name.replace('.jpg', '')
+            filename = name.replace('.jpg', '').replace('.JPG', '')
             try:
                 print(quotes.quotes[filename])
                 img = Image.open(
