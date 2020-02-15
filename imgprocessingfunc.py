@@ -30,8 +30,8 @@ def cropit(im):
     width, height = im.size
     right = width-1300
     left = 1300  
-    top = 400
-    bottom = height - top
+    top = 100
+    bottom = height - (top + 1000)
     im1 = im.crop((left, top, right, bottom))
     print('done')
     return im1
