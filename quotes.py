@@ -71,7 +71,7 @@ quotes = {
     'Laiba Rashid': 'From being part of teatime, seaview boys and malay girls I really did it all.',
     'Laiba Shehryar': "You'd be in good shape if u ran as much as your mouth.",
     'Maaz Khalid': 'Cheaters never win but I just graduated.',
-    'Maham Nagaria': 'Ever loved someone that much you would do anything for them? Let that someone be you and do whatever the hell you want.',
+    'Maham Nagaria': 'Love yourself and do whatever the hell you want.',
     'Maheen Ahmed': 'I promise I’m a lot nicer than my “walking to class” face would leave you to believe.',
     'Manal Raza': 'No you cannot call me if you are here.',
     'Mannal Ahmed': 'Say "MA"',
