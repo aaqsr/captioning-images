@@ -3,7 +3,7 @@ import quotes
 from PIL import Image, ImageFont, ImageDraw, ImageOps
 import os
 
-p = "/Users/apple/Documents/pyth image work/images"
+p = "D:\vscode\pyth image work\images"
 skipped = []
 
 if os.path.exists(p) and os.path.isdir(p):
@@ -14,7 +14,7 @@ if os.path.exists(p) and os.path.isdir(p):
             try:
                 print(quotes.quotes[filename])
                 img = Image.open(
-                    "/Users/apple/Documents/pyth image work/images/{}".format(name))
+                    "D:\vscode\pyth image work\images\{}".format(name))
                 img = cropit(img)
                 img = add_border(img)
                 drawText(quotes.quotes[filename], img)

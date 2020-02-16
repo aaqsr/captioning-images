@@ -1,7 +1,7 @@
 from PIL import Image, ImageFont, ImageDraw, ImageOps
 
 
-quotefont = ImageFont.truetype("Arial.ttf", 100)
+quotefont = ImageFont.truetype("C:\Windows\Fonts\Arial.ttf", 100)
 
 #TODO add documentation for all these functions
 
@@ -132,7 +132,7 @@ def drawTitle(name, img):
     print('\ndrawing title')
     draw = ImageDraw.Draw(img)
     w, h = draw.textsize(name, ImageFont.truetype(
-        "/Supplemental/Futura.ttc", 110)) 
+        "C:\Windows\Fonts\Arial.ttf", 110)) 
     drawTextWithOutline(name, img.width/2 - w/2, img.height-450,
-                        ImageFont.truetype("/Supplemental/Futura.ttc", 110), img)
+                        ImageFont.truetype("C:\Windows\Fonts\Arial.ttf", 110), img)
     print('\ndone')
