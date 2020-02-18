@@ -1,4 +1,8 @@
 TODO make a proper readme
 
-WORKS ON MACBOOK ONLY 
-Waiting for actual images to come in at this point
+To configure crop dimensions. 
+
+    note that PIL's grid starts from top left and is inverted.
+
+To configure border dimensions.
+

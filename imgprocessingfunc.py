@@ -5,9 +5,10 @@ quotefont = ImageFont.truetype("Arial.ttf", 100)
 titlefont = ImageFont.truetype("/Supplemental/Futura.ttc", 110)
 
 #TODO add documentation for all these functions
+#TODO use tqdm for the fancy loading bars pls
 
 def add_border(input_img):
-    """Gives the image a nice white border which is bigger at the bottom and smaller in all other sides. (To configure the border size, change the left, top, right and bottom variables in this function.)
+    """Gives the image a nice white border which is bigger at the bottom and smaller in all other sides. (To configure the border size, change the left, top, right and bottom variables in this function).
     
     Arguments:
         input_img {PIL image} -- The image you want to add a border to.
@@ -15,37 +16,54 @@ def add_border(input_img):
     Returns:
         PIL image -- The edited image with the border.
     """
-    print('\nadding border')
+    print('\n Adding border')
     left = 50
     top = left
     right = left
     bottom = 500
     border = (left, top, right, bottom)
     bimg = ImageOps.expand(input_img, border=border, fill='White')
-    print('\ndone')
+    print('\n Border: Done')
     return bimg
 
 
 def cropit(im):
-    print('cropping')
+    """Crops the image. (To configure the crop size, change the left, top, right and bottom variables in this function. Note however that PIL uses an inverted grid that starts in the top left for its coordinate system).
+    
+    Arguments:
+        im {PIL image} -- The image you want to crop.
+    
+    Returns:
+        PIL image -- The edited image which has been cropped.
+    """
+    print('Cropping')
     width, height = im.size
     left = 300 
     right = width-left
     top = 600
     bottom = height - (top+1000)
     im1 = im.crop((left, top, right, bottom))
-    print('done')
+    print('Cropping: done')
     return im1
 
 
-def drawTextWithOutline(text, x, y, font, img):
+def writestr(text, x, y, font, img):
+    """Do not use directly. Use the drawText or drawTitle functions. It simply writes out a string on the image.
+    
+    Arguments:
+        text {str} -- The text you want to write.
+        x {int} -- x coord of the text. (Note: PIL uses inverted grid starting from top left)
+        y {int} -- y coord of the text. (Note: PIL uses inverted grid starting from top left)
+        font {PIL font} -- The font you want to use in form of ImageFont.truetype(<font>, <font size>)
+        img {PIL image} -- Image you want to add text to.
+    """
     draw = ImageDraw.Draw(img)
     draw.text((x, y), text, (0, 0, 0), font=font)
     return
 
 
 def drawText(text, img):
-    print('\ndrawing text')
+    print('\nDrawing text')
     # text = text.upper()
     draw = ImageDraw.Draw(img)
     # measure the size the text will take
@@ -122,12 +140,12 @@ def drawText(text, img):
         # x = 1000
         # y = 1000
         lastY = y
-        drawTextWithOutline(lines[i], x, y, quotefont, img)
+        writestr(lines[i], x, y, quotefont, img)
     print('\ndone')
 
 def drawTitle(name, img):
     print('\ndrawing title')
     draw = ImageDraw.Draw(img)
     w, h = draw.textsize(name, titlefont) 
-    drawTextWithOutline(name, img.width/2 - w/2, img.height-450, titlefont, img)
+    writestr(name, img.width/2 - w/2, img.height-450, titlefont, img)
     print('\ndone')

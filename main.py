@@ -13,11 +13,10 @@ if check:
     for name in ls:
         # if name != '.DS_Store': Run if you're on Mac. Optional because the exception handling catches .DS_Store either way.
             print(name)
-            filename = name.replace('.jpg', '').replace('.JPG', '')
+            filename = name.replace('.jpg', '').replace('.JPG', '').replace('.png', '').replace('.PNG', '')
             try:
                 print(quotes.quotes[filename])
-                img = Image.open(
-                    imgpath + name)
+                img = Image.open(imgpath + name)
                 img = cropit(img)
                 img = add_border(img)
                 drawText(quotes.quotes[filename], img)
