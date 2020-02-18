@@ -2,6 +2,7 @@ from PIL import Image, ImageFont, ImageDraw, ImageOps
 
 
 quotefont = ImageFont.truetype("Arial.ttf", 100)
+titlefont = ImageFont.truetype("/Supplemental/Futura.ttc", 110)
 
 #TODO add documentation for all these functions
 
@@ -28,10 +29,10 @@ def add_border(input_img):
 def cropit(im):
     print('cropping')
     width, height = im.size
-    right = width-1300
-    left = 1300  
-    top = 100
-    bottom = height - (top + 1000)
+    left = 300 
+    right = width-left
+    top = 600
+    bottom = height - (top+1000)
     im1 = im.crop((left, top, right, bottom))
     print('done')
     return im1
@@ -39,10 +40,6 @@ def cropit(im):
 
 def drawTextWithOutline(text, x, y, font, img):
     draw = ImageDraw.Draw(img)
-    # draw.text((x-2, y-2), text,(0,0,0),font=font)
-    # draw.text((x+2, y-2), text,(0,0,0),font=font)
-    # draw.text((x+2, y+2), text,(0,0,0),font=font)
-    # draw.text((x-2, y+2), text,(0,0,0),font=font)
     draw.text((x, y), text, (0, 0, 0), font=font)
     return
 
@@ -131,8 +128,6 @@ def drawText(text, img):
 def drawTitle(name, img):
     print('\ndrawing title')
     draw = ImageDraw.Draw(img)
-    w, h = draw.textsize(name, ImageFont.truetype(
-        "/Supplemental/Futura.ttc", 110)) 
-    drawTextWithOutline(name, img.width/2 - w/2, img.height-450,
-                        ImageFont.truetype("/Supplemental/Futura.ttc", 110), img)
+    w, h = draw.textsize(name, titlefont) 
+    drawTextWithOutline(name, img.width/2 - w/2, img.height-450, titlefont, img)
     print('\ndone')

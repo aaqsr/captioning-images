@@ -3,29 +3,31 @@ import quotes
 from PIL import Image, ImageFont, ImageDraw, ImageOps
 import os
 
-p = "/Users/apple/Documents/pyth image work/images"
+imgpath = "images/"
+outpath = "out/"
+check = os.path.exists(imgpath) and os.path.isdir(imgpath) and os.path.exists(outpath) and os.path.exists(imgpath)
 skipped = []
 
-if os.path.exists(p) and os.path.isdir(p):
-    for name in os.listdir(p):
-        if name != '.DS_Store':
+if check:
+    ls = os.listdir(imgpath)
+    for name in ls:
+        # if name != '.DS_Store': Run if you're on Mac. Optional because the exception handling catches .DS_Store either way.
             print(name)
             filename = name.replace('.jpg', '').replace('.JPG', '')
             try:
                 print(quotes.quotes[filename])
                 img = Image.open(
-                    "/Users/apple/Documents/pyth image work/images/{}".format(name))
+                    imgpath + name)
                 img = cropit(img)
                 img = add_border(img)
                 drawText(quotes.quotes[filename], img)
-                drawTitle(filename, img)
-                img.save("out/{}".format(name))
+                drawTitle(filename.capitalize(), img)
+                img.save(outpath + name)
             except:
-                print('Error, likely quote not found, skipping')
+                print('Error, likely quote not found or image too small for quote, skipping')
                 skipped.append(filename)
+else:
+    print("Path not found")
 
-print('Skipped the following:\n')
+print('\nSkipped the following:\n')
 print(skipped)
-                
-# TODO WHAT IF WE PUT THE TITLE ON THE TOP??
-# TODO Fix the title's placement, it's clipping through the quotes. Also fix the quote's placement
