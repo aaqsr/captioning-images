@@ -1,21 +1,22 @@
-from imgprocessingfunc import cropit, add_border, drawText, drawTitle
+from imgprocessingfunc import cropit, mini_cropit, add_border, drawText, drawTitle
 import quotes
 from PIL import Image, ImageFont, ImageDraw, ImageOps
 import os
 
-p = "D:\vscode\pyth image work\images"
+p = 'D:\\vscode\pyth image work\images'
 skipped = []
 
 if os.path.exists(p) and os.path.isdir(p):
     for name in os.listdir(p):
         if name != '.DS_Store':
             print(name)
-            filename = name.replace('.jpg', '').replace('.JPG', '')
+            filename = name.replace('.JPG', '').replace('.jpg', '')
             try:
                 print(quotes.quotes[filename])
                 img = Image.open(
-                    "D:\vscode\pyth image work\images\{}".format(name))
-                img = cropit(img)
+                    "D:\\vscode\pyth image work\images\{}".format(name))
+                # img = cropit(img)
+                img = mini_cropit(img)
                 img = add_border(img)
                 drawText(quotes.quotes[filename], img)
                 drawTitle(filename, img)
@@ -23,6 +24,8 @@ if os.path.exists(p) and os.path.isdir(p):
             except:
                 print('Error, likely quote not found, skipping')
                 skipped.append(filename)
+else:
+    print("Not a valid path bruh")
 
 print('Skipped the following:\n')
 print(skipped)

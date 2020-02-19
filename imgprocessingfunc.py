@@ -36,6 +36,16 @@ def cropit(im):
     print('done')
     return im1
 
+def mini_cropit(im):
+    print('mini crop cropping')
+    width, height = im.size
+    right = width-900
+    left = 800   
+    top = 100
+    bottom = height - (top + 700)
+    im1 = im.crop((left, top, right, bottom))
+    print('done')
+    return im1
 
 def drawTextWithOutline(text, x, y, font, img):
     draw = ImageDraw.Draw(img)
@@ -132,7 +142,8 @@ def drawTitle(name, img):
     print('\ndrawing title')
     draw = ImageDraw.Draw(img)
     w, h = draw.textsize(name, ImageFont.truetype(
-        "C:\Windows\Fonts\Arial.ttf", 110)) 
+        "C:\Windows\Fonts\Arial.ttf", 120)) 
     drawTextWithOutline(name, img.width/2 - w/2, img.height-450,
-                        ImageFont.truetype("C:\Windows\Fonts\Arial.ttf", 110), img)
+                        ImageFont.truetype("C:\Windows\Fonts\\framd.ttf", 120), img)
     print('\ndone')
+    
