@@ -1,4 +1,4 @@
-TODO make a proper readme
+
 
 To configure crop dimensions. 
 
